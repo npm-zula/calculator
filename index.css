@@ -20,6 +20,9 @@ body{
     padding: 40px 30px;
 }
 .result{
+    display: flex;
+    justify-content: end;
+    align-items: center;
     color: white;
     background-color: #EE6983;
     height: 40px;
@@ -28,17 +31,13 @@ body{
     border-radius: 10px;
     overflow: hidden;
 }
-.display h3,
-.result h1{
-    margin: 0;
-    font-weight: 300;
-}
+
 .display{
     display: flex;
     justify-content: end;
     align-items: center;
     background-color: #EE6983;
-    color: white;
+    color: white;   
     height: 50px;
     padding: 0 15px;
     text-align: right;
@@ -87,4 +86,33 @@ body{
 .btn-lg:hover{
     background-color: black;
     color: #FFffff;
+}
+
+
+#display{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #EE6983;
+    color: white;   
+    height: 50px;
+    padding: 0 15px;
+    text-align: right;
+    font-size: 25px;
+
+    
+    border-radius: 10px;
+    overflow: hidden;
+    border-color: transparent;
+}
+
+#result {
+    
+    height: 50px;
+    color: white;   
+    font-size: 35px;
+    text-align: right;
+    background-color: #EE6983;
+    border-color: transparent;
+
 }

@@ -6,8 +6,8 @@ function display(num) {
 }
 
 function allClear() {
-    calcDisplay.innerHTML = "";
-    resultDisplay.innerHTML = "0";
+    calcDisplay.value = "";
+    resultDisplay.value = "0";
 }
 
 function del() {
@@ -28,6 +28,9 @@ function   result(num1, operator, num2) {
           return num1 - num2;
       }
 }
+
+
+
 
 
 
