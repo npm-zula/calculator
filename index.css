@@ -1,5 +1,6 @@
-
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 body{
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,6 +8,7 @@ body{
 }
 
 .container{
+    
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,30 +17,34 @@ body{
 }
 .calculator-body{
     width: 260px;
-    background-color: #FFC4C4;
+    background-color: #ECB390;
     backdrop-filter: blur (10px);
     border-radius: 20px;
     padding: 40px 30px;
+    box-shadow: 6px 5px 12px;
 }
 .result{
+    font-family: 'Dosis', sans-serif;
     display: flex;
     justify-content: end;
     align-items: center;
-    color: white;
-    background-color: #EE6983;
+    color: black;
+    background-color: #FCF8E8;
     height: 40px;
     padding: 20px;
     text-align: right;
     border-radius: 10px;
     overflow: hidden;
+    
 }
 
 .display{
+    font-family: 'Dosis', sans-serif;
     display: flex;
     justify-content: end;
     align-items: center;
-    background-color: #EE6983;
-    color: white;   
+    background-color: #FCF8E8;
+    color: black;   
     height: 50px;
     padding: 0 15px;
     text-align: right;
@@ -54,12 +60,13 @@ body{
     align-items: center;
 }
 .btn{
+    font-family: 'Dosis', sans-serif;
     padding: 10px;
     height: 55px;
     width: 55px;
     font-size: medium;
-    color: rgb(191, 191, 191);
-    background-color: #850E35;
+    color: black;
+    background-color: #DF7861;
     border: none;
     outline: none;
     margin-top: 10px;
@@ -67,59 +74,21 @@ body{
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.1s ease 0s;
     cursor: pointer;
+    box-shadow: 2px 2px 4px;
 }
 .btn:hover{
-    background-color: #EE6983;
+    background-color: #eb5533;
     color: black;
 }
 .btn:active{
     background-color: #13181d;
     box-shadow: none;
 }
-.btn-orange{
-    
-}
+
 .btn-lg{
     width: 120px;
-    background-color: #EE6983;
-    color: #243441;
+    background-color: #94B49F;
 }
 .btn-lg:hover{
-    background-color: black;
-    color: #FFffff;
-}
-
-/* 
-#display{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    background-color: #EE6983;
-    color: white;   
-    height: 50px;
-    padding: 0 15px;
-    text-align: right;
-    font-size: 25px;
-
-    
-    border-radius: 10px;
-    overflow: hidden;
-    border-color: transparent;
-}
-
-#result {
-    
-    height: 50px;
-    color: white;   
-    font-size: 35px;
-    text-align: right;
-    background-color: #EE6983;
-    border-color: transparent;
-
-} */
-
-.calc-display h3,
-.result-display h1{
-    margin: 0;
-    font-weight: 300;
+    background-color: #4a5f51;
 }
