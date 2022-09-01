@@ -1,35 +1,101 @@
 let calcDisplay = document.getElementById('display')
 let resultDisplay = document.getElementById('result')
 
+var queue = [];
+var input = 0;
+
 function display(num) {
-    calcDisplay.value += num;
+    calcDisplay.innerHTML += num;
+    input+= num;
 }
 
 function allClear() {
-    calcDisplay.value = "";
-    resultDisplay.value = "0";
+    queue = [];
+    input = 0;
+    calcDisplay.innerHTML = "";
+    resultDisplay.innerHTML = "0";
 }
 
 function del() {
-    calcDisplay.innerText = calcDisplay.innerText.slice(0,-1);
+    let temp = calcDisplay.innerHTML
+    calcDisplay.innerHTML = temp.substr(0, temp.length - 1);
+}
+
+function result(num){
+    resultDisplay.innerHTML = num;
+    
 }
 
 
-    // Result
-function   result(num1, operator, num2) {
-    switch (operator) {
-        case "/":
-          return num1 / num2;
-        case "*":
-          return num1 * num2;
-        case "+":
-          return num1 + num2;
-        case "-":
-          return num1 - num2;
+function calculate(value){
+    if (input !==0) {
+      input = parseFloat(input);
+      queue.push(input);
+        }
+
+    var answer = value[0];
+    var dividedByZero = 0;
+    for (var i = 2; i < value.length; i= i+2) {
+        switch (queue[i-1]) {
+            case '+':
+                answer+= value[i];
+                break;
+            case '-':
+                answer-= value[i];
+                break;
+            case '/':    
+                if (value[i] === 0)   
+                  dividedByZero = 1;
+                else      
+                  answer = answer / value[i];
+                break;
+            case'*': 
+                  answer = answer * value[i];
+                break;
+            case'%':
+                  answer = answer % value[i];
+        }
+    }
+    
+    answer = answer.toFixed(5);
+    answer = parseFloat(answer);
+
+    if (dividedByZero == 1) { 
+        allClear();
+        result("NA");
       }
+    else{
+        result(answer)
+        input = answer;
+        queue = [];
+  }
 }
 
+function numeric(arg){
+  if ( calcDisplay.innerHTML ===  "ERROR" || (calcDisplay.innerHTML == "0" && arg != ".")){ 
+      calcDisplay.innerHTML = ""; 
+  }
 
+  if (!(arg === ".") || !input.match(/[.]/)) {
+    input += arg;
+    calcDisplay.innerHTML += arg;
+  }
+}
+
+function operator(arg){
+  if (input !== 0 && input !== "-") {
+      input = parseFloat(input);
+      queue.push(input);
+      queue.push(arg);
+      calcDisplay.innerHTML +=arg;
+      input = 0;
+  }
+  
+  if (arg == "-"  && isNaN(queue[0]) && input !== "-"){
+      input ="-";
+      calcDisplay.innerHTML = "-";
+  }
+}
 
 
 

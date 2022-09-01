@@ -3,6 +3,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
 .container{
@@ -13,7 +14,7 @@ body{
     background-color: #FFF5E4;
 }
 .calculator-body{
-    width: 250px;
+    width: 260px;
     background-color: #FFC4C4;
     backdrop-filter: blur (10px);
     border-radius: 20px;
@@ -88,7 +89,7 @@ body{
     color: #FFffff;
 }
 
-
+/* 
 #display{
     display: flex;
     justify-content: end;
@@ -115,4 +116,10 @@ body{
     background-color: #EE6983;
     border-color: transparent;
 
+} */
+
+.calc-display h3,
+.result-display h1{
+    margin: 0;
+    font-weight: 300;
 }
